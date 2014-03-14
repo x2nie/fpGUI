@@ -23,9 +23,9 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, SysUtils, fpg_base, fpg_main, vfdmain, vfdresizer, vfdforms,
-  vfdfile, newformdesigner, vfdwidgets, vfdformparser, vfdeditors,
-  vfdwidgetclass, vfdutils, vfdprops, vfddesigner, vfdpropeditgrid;
+  Classes, SysUtils, fpg_base, fpg_main, vfdmain, vfdresizer, vfdforms, vfdfile,
+  newformdesigner, vfdwidgets, vfdformparser, vfdeditors, vfdwidgetclass,
+  vfdutils, vfdprops, vfddesigner, vfdpropeditgrid, test_fpgdesignerform;
 
 
 procedure MainProc;

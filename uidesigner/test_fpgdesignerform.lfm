@@ -1,0 +1,12 @@
+object fpgForm1: TfpgForm1
+  BackgroundColor = 21483
+  Height = 99
+  Left = 238
+  MinHeight = 32
+  MinWidth = 32
+  ModalResult = mrNone
+  Sizeable = True
+  Top = 145
+  Width = 222
+  WindowTitle = 'Mojojojo'
+end
