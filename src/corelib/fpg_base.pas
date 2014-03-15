@@ -20,7 +20,7 @@ unit fpg_base;
 {$mode objfpc}{$H+}
 
 // To enable the AggPas powered Canvas
-{.$define AGGCanvas}
+{$define AGGCanvas}
 
 // For debug use only
 {.$define GDEBUG}

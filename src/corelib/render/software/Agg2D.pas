@@ -21,7 +21,7 @@ unit Agg2D;
 
 interface
 
-{$I agg_mode.inc }
+{$I AggCompiler.inc }
 
 { With this define you can switch use of FreeType or Win32 TrueType font
   engine.
@@ -40,46 +40,46 @@ interface
 {$ENDIF}
 
 uses
-  agg_basics ,
-  agg_array ,
-  agg_trans_affine ,
-  agg_trans_viewport ,
-  agg_path_storage ,
-  agg_conv_stroke ,
-  agg_conv_transform ,
-  agg_conv_curve ,
-  agg_conv_dash ,
-  agg_rendering_buffer ,
-  agg_renderer_base ,
-  agg_renderer_scanline ,
-  agg_span_gradient ,
-  agg_span_image_filter_rgba ,
-  agg_span_image_resample_rgba ,
-  agg_span_converter ,
-  agg_span_interpolator_linear ,
-  agg_span_allocator ,
-  agg_rasterizer_scanline_aa ,
-  agg_gamma_functions ,
-  agg_scanline_u ,
-  agg_arc ,
-  agg_bezier_arc ,
-  agg_rounded_rect ,
-  agg_font_engine ,
-  agg_font_cache_manager ,
-  agg_pixfmt ,
-  agg_pixfmt_rgb ,
-  agg_pixfmt_rgba ,
-  agg_color ,
-  agg_math_stroke ,
-  agg_image_filters ,
-  agg_vertex_source ,
-  agg_render_scanlines ,
+  AggBasics ,
+  AggArray ,
+  AggTransAffine ,
+  AggTransViewport ,
+  AggPathStorage ,
+  AggConvStroke ,
+  AggConvTransform ,
+  AggConvCurve ,
+  AggConvDash ,
+  AggRenderingBuffer ,
+  AggRendererBase ,
+  AggRendererScanLine ,
+  AggSpanGradient ,
+  AggSpanImageFilterRgba ,
+  AggSpanImageResampleRgba ,
+  AggSpanConverter ,
+  AggSpanInterpolatorLinear ,
+  AggSpanAllocator ,
+  AggRasterizerScanLineAA ,
+  AggGammaFunctions ,
+  AggScanlineUnpacked ,
+  AggArc ,
+  AggBezierArc ,
+  AggRoundedRect ,
+  AggFontEngine ,
+  AggFontCacheManager ,
+  AggPixelFormat ,
+  AggPixelFormatRgb ,
+  AggPixelFormatRgba ,
+  AggColor ,
+  AggMathStroke ,
+  AggImageFilters ,
+  AggVertexSource ,
+  AggRenderScanlines ,
 
 {$IFDEF AGG2D_USE_FREETYPE }
-  agg_font_freetype ,
+  AggFontFreetype ,
 {$ENDIF }
 {$IFDEF AGG2D_USE_WINFONTS}
-  agg_font_win32_tt ,
+  AggFontWin32TrueType ,
 {$ENDIF }
 
   Math,
@@ -154,7 +154,7 @@ type
  PAggColor = ^TAggColor;
  TAggColor = rgba8;
 
- TAggRectD = agg_basics.rect_d;
+ TAggRectD = aggbasics.rect_d;
 
  TAggAffine = trans_affine;
  PAggAffine = trans_affine_ptr;
@@ -1076,14 +1076,14 @@ end;
 { DEG2RAD }
 function deg2Rad(v : double ) : double;
 begin
- result:=v * agg_basics.pi / 180.0;
+ result:=v * aggbasics.pi / 180.0;
 
 end;
 
 { RAD2DEG }
 function rad2Deg(v : double ) : double;
 begin
- result:=v * 180.0 / agg_basics.pi;
+ result:=v * 180.0 / aggbasics.pi;
 
 end;
 
@@ -2521,7 +2521,7 @@ end;
 { ARC }
 procedure TAgg2D.Arc(const cx ,cy ,rx ,ry ,start ,sweep : double );
 var
- ar : {bezier_}agg_arc.arc;
+ ar : {bezier_}aggarc.arc;
 
 begin
  m_path.remove_all;
@@ -3429,7 +3429,7 @@ procedure TAgg2D.CopyImage(
            imgX1 ,imgY1 ,imgX2 ,imgY2 : integer;
            dstX ,dstY : double );
 var
- r     : agg_basics.rect;
+ r     : aggbasics.rect;
  image : TAggImage;
 
 begin

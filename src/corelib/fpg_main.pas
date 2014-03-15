@@ -22,7 +22,7 @@ unit fpg_main;
 {.$Define DEBUG}
 
 // To enable the AggPas powered Canvas
-{.$define AGGCanvas}
+{$define AGGCanvas}
 
 { TODO : Implement font size adjustments for each platform. eg: linux=10pt & windows=8pt }
 
