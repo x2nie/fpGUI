@@ -26,7 +26,7 @@
         <UnitName Value="fpg_designer"/>
       </Item1>
     </Files>
-    <Type Value="RunAndDesignTime"/>
+    <Type Value="DesignTime"/>
     <RequiredPkgs Count="3">
       <Item1>
         <PackageName Value="fpgui_toolkit"/>
